@@ -5,6 +5,7 @@ Runs Docker containers for Let's Encrypt and DuckDNS.
 ## Prerequisites
 
 - Git
+- Docker macvlan network named `local`
 
 ## Run with Docker Compose
 
