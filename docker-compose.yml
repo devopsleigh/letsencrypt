@@ -32,7 +32,7 @@ services:
       - SUBDOMAINS=${SUBDOMAINS}
       - LOG_FILE=true
     volumes:
-      - /sharedfolders/appdata/duckdns:/config
+      - ${PATH_CONFIG}:/config
     restart: unless-stopped
     networks:
       local:

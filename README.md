@@ -19,12 +19,14 @@ Runs Docker containers for Let's Encrypt and DuckDNS.
 
 2. Change secrets appropriately
 
-   ```sh
+   ```yaml
+   PATH_CONFIG=/path/to/share
    TZ=Country/City
    DUCKDNS_URL=yourdns.duckdns.org
    DUCKDNS_TOKEN=guid
    EMAIL=user@domain.com
    SUBDOMAINS=yourdns
+   IP_ADDRESS=ip.ad.dr.ess
    ```
 
 3. Run the containers
