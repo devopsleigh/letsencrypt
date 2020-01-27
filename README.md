@@ -20,7 +20,8 @@ Runs Docker containers for Let's Encrypt and DuckDNS.
 2. Change secrets appropriately
 
    ```yaml
-   PATH_CONFIG=/path/to/share
+   PATH_LETS_CONFIG=/path/to/share
+   PATH_DUCK_CONFIG=/path/to/share
    TZ=Country/City
    DUCKDNS_URL=yourdns.duckdns.org
    DUCKDNS_TOKEN=guid

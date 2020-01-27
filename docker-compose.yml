@@ -15,7 +15,7 @@ services:
       - DUCKDNSTOKEN=${DUCKDNS_TOKEN}
       - EMAIL=${EMAIL}
     volumes:
-      - /sharedfolders/appdata/letsencrypt:/config
+      - ${PATH_LETS_CONFIG}:/config
     ports:
       - 450:443
       - 90:80
@@ -32,7 +32,7 @@ services:
       - SUBDOMAINS=${SUBDOMAINS}
       - LOG_FILE=true
     volumes:
-      - ${PATH_CONFIG}:/config
+      - ${PATH_DUCK_CONFIG}:/config
     restart: unless-stopped
     networks:
       local:
