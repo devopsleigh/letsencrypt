@@ -1,0 +1,43 @@
+---
+version: "2"
+services:
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=${TZ}
+      - VALIDATION=duckdns
+      - URL=${DUCKDNS_URL}
+      - DUCKDNSTOKEN=${DUCKDNS_TOKEN}
+      - EMAIL=${EMAIL}
+    volumes:
+      - /sharedfolders/appdata/letsencrypt:/config
+    ports:
+      - 450:443
+      - 90:80
+    restart: unless-stopped
+    network_mode: bridge
+  duckdns:
+    image: linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=${TZ}
+      - TOKEN=${DUCKDNS_TOKEN}
+      - SUBDOMAINS=${SUBDOMAINS}
+      - LOG_FILE=true
+    volumes:
+      - /sharedfolders/appdata/duckdns:/config
+    restart: unless-stopped
+    networks:
+      local:
+        ipv4_address: ${IP_ADDRESS}
+networks:
+  local:
+    external:
+      name: local
