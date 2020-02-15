@@ -34,10 +34,4 @@ services:
     volumes:
       - ${PATH_DUCK_CONFIG}:/config
     restart: unless-stopped
-    networks:
-      local:
-        ipv4_address: ${IP_ADDRESS}
-networks:
-  local:
-    external:
-      name: local
+    network_mode: bridge
