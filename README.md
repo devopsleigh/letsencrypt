@@ -5,6 +5,7 @@ Runs Docker containers for Let's Encrypt and DuckDNS.
 ## Prerequisites
 
 - Git
+- Port forwarding on 80 -> 90 and 443 -> 450 to the host
 
 ## Run with Docker Compose
 
