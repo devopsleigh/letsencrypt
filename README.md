@@ -5,17 +5,17 @@ Runs Docker containers for Let's Encrypt and DuckDNS.
 ## Prerequisites
 
 - Git
-- Docker macvlan network named `local`
+- Port forwarding on 80 -> 90 and 443 -> 450 to the host
 
 ## Run with Docker Compose
 
 1. Download the repository
 
    ```sh
-    git clone https://github.com/devopsleigh/letsencrypt.git
-    cd letsencrypt
-    nano .env
-    ```
+   git clone https://github.com/devopsleigh/letsencrypt.git
+   cd letsencrypt
+   nano .env
+   ```
 
 2. Change secrets appropriately
 
@@ -27,7 +27,6 @@ Runs Docker containers for Let's Encrypt and DuckDNS.
    DUCKDNS_TOKEN=guid
    EMAIL=user@domain.com
    SUBDOMAINS=yourdns
-   IP_ADDRESS=ip.ad.dr.ess
    ```
 
 3. Run the containers
